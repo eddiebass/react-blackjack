@@ -1,38 +1,55 @@
 .App {
-  text-align: center;
+	text-align: center;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* APP */
+h1 {
+	font-family: "Patua One", cursive;
+	font-size: 48px;
+	letter-spacing: 4px;
+}
+button {
+	width: 235px;
+	height: 55px;
+	border-radius: 5px;
+	background: #2fdd92;
+	border: none;
+	font-family: inherit;
+	font-size: 20px;
+	font-weight: 500;
+	cursor: pointer;
+}
+button:active,
+button:hover {
+	background: #6de7b3;
+}
+.blue {
+	background: #3db2ff;
+}
+.blue:active,
+.blue:hover {
+	background: #77c9ff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* CARDS */
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 40px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+	width: 197px;
+	height: 263px;
+	border-radius: 10px;
+	background: #5eb19d;
 }
