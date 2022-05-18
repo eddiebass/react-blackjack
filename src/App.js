@@ -1,4 +1,5 @@
 import "./App.css";
+import Nav from "./components/Nav";
 import getNum, { blackjack } from "./utilities";
 import { useState } from "react";
 function App() {
@@ -30,34 +31,47 @@ function App() {
 				});
 			});
 	};
+	const startNew = () => {
+		yourPull = 0;
+		setPlay([]);
+		getCards();
+	};
 	const newPlay = play.map((item) => {
 		yourPull += getNum(item.value);
 		return <img className="card" src={item.image} alt="" />;
 	});
 
-	let btn = <button onClick={getCards}>Start A Game </button>;
+	let btn = "";
 
-	if (deck.deck_id) {
+	if (deck.deck_id && yourPull === 0) {
 		btn = (
 			<button className="blue" onClick={drawCards}>
 				Draw Cards{" "}
 			</button>
 		);
 	}
-	if (play.length >= 2) {
+	if (play.length >= 2 && yourPull < 21) {
 		btn = (
 			<button className="yellow" onClick={drawACard}>
 				Draw A Card{" "}
 			</button>
 		);
 	}
+	if (yourPull >= 21) {
+		btn = (
+			<button className="red" onClick={startNew}>
+				Start New Game{" "}
+			</button>
+		);
+	}
 	return (
 		<div className="App">
+			<Nav />
 			<h1>BLACKJACK</h1>
 			<section>{newPlay}</section>
 			<p>{blackjack(yourPull)}</p>
 			<h2>Sum: {yourPull}</h2>
-			{btn}
+			{btn || <button onClick={getCards}>Start A Game </button>}
 		</div>
 	);
 }

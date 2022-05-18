@@ -54,6 +54,13 @@ button:hover {
 .yellow:hover {
 	background: #feec79;
 }
+.red {
+	background: lightcoral;
+}
+.red:active,
+.red:hover {
+	background: lightcoral;
+}
 /* CARDS */
 section {
 	display: flex;
@@ -67,4 +74,63 @@ section {
 	width: 157px;
 	height: 210px;
 	border-radius: 10px;
+}
+/* NAV */
+nav {
+	/* position: absolute; */
+	width: 100%;
+	margin-top: 0;
+}
+.target {
+	color: aliceblue;
+	font-size: 14px;
+	font-weight: 500;
+	text-decoration: underline;
+	cursor: pointer;
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 40px;
+}
+.overlay {
+	height: 100vh;
+	background-color: #282c34;
+	margin-top: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.modal {
+	max-width: 600px;
+	height: 300px;
+	margin: 0 auto;
+	background-color: #24282f;
+	border-radius: 10px;
+	padding: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	top: 20%;
+}
+.modal p {
+	font-size: 14px;
+	margin: 5px;
+}
+.modal-btn {
+	margin-top: 30px;
+}
+h3 {
+	margin-top: 0;
+	padding: 5px;
+	width: max-content;
+	border-bottom: 1px solid #2fdd92;
+}
+.yes {
+	display: block;
+}
+.no {
+	display: none;
 }
