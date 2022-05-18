@@ -1,10 +1,9 @@
 import React from "react";
 
-const Cards = () => {
+const Cards = (props) => {
 	return (
 		<section>
-			<div className="card">Card 1</div>
-			<div className="card">Card 2</div>
+			<img className="card" src={props.image} alt="" />
 		</section>
 	);
 };
